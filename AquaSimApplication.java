@@ -23,7 +23,7 @@ public class AquaSimApplication
      **/
     public static void main(String args[])
     {
-        System.out.println("I hate APUSH");
+        System.out.println("I love tennis");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
 
