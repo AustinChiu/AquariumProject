@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.util.Random;
 
+
 /** Aquarium Lab Series: <br>    
  *      The AquaSimApplication class contains the main function that will
  *      run the Aquarium Simulation. (This description should be updated
@@ -26,20 +27,22 @@ public class AquaSimApplication
         System.out.println("I love tennis");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
-
+            Random generator= new Random();
+           // int randNum = generator.nextInt(10);
+            
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
-        aqua = new Aquarium(600, 480); // ... object that has now been created
+        aqua = new Aquarium(480, 600); // ... object that has now been created
 
         // Construct fish and add them to the aquarium.
         //      CODE MISSING HERE!
         
        //add aquafish to aquarium
-        AquaFish nemo = new AquaFish(aqua);
+        AquaFish nemo = new AquaFish(aqua,Color.WHITE);
         aqua.add(nemo);
-        AquaFish teemo = new AquaFish(aqua);
+        AquaFish teemo = new AquaFish(aqua,Color.RED);
         aqua.add(teemo);
-        AquaFish sushi = new AquaFish(aqua);
+        AquaFish sushi = new AquaFish(aqua,Color.BLUE);
         aqua.add(sushi);
 
 
@@ -60,22 +63,31 @@ public class AquaSimApplication
 
 
         // RUN THE AQUARIUM SIMULATION.
-
         // Make the fish move and redisplay.
         //      CODE MISSING HERE!
         nemo.moveForward();
-        userInterface.showAquarium();
         sushi.moveForward();
-        userInterface.showAquarium();
+        teemo.moveForward();
+        for(;nemo.atWall()!=true;){
+        if(nemo.atWall())
+            nemo.changeDir();
+        nemo.moveForward();
+        if(sushi.atWall())
+            sushi.changeDir();
+        sushi.moveForward();
+        if(teemo.atWall())
+            teemo.changeDir();
         teemo.moveForward();
         userInterface.showAquarium();
+    }
+            
+            
+        }
         
 
-        // WRAP UP.
-
-        // Remind user how to quit application.
-        userInterface.println ("Close GUI display window to quit.");
+        // WRAP UP
+        // Remind user how to quit application
 
     }//end main
 
-}//end class
+//end class
