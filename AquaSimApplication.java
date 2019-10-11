@@ -25,6 +25,7 @@ public class AquaSimApplication
      private static Random generator;
     public static void main(String args[])
     {
+    
         System.out.println("I love tennis");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
@@ -47,10 +48,6 @@ public class AquaSimApplication
         aqua.add(teemo);
         AquaFish a = new AquaFish(aqua,getColor());
         aqua.add(a);
-        int i;
-        for(i=10;i>=0;i--){
-            
-        }
         // Construct a graphical user interface (GUI) to display and control
         // the simulation.  The user interface needs to know about the
         // aquarium, so we pass aqua to the user interface constructor.
@@ -73,7 +70,9 @@ public class AquaSimApplication
         nemo.moveForward();
         sushi.moveForward();
         teemo.moveForward();
-        for(;;){
+        a.moveForward();
+        int i =10;
+        for(int steps=0;steps<userInterface.getNumberOfSteps() ;steps++){
         if(nemo.atWall())
             nemo.changeDir();
         nemo.moveForward();
